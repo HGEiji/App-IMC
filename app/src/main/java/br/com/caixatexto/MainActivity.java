@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             Double peso = Double.parseDouble(pesoStr);
             Double altura = Double.parseDouble(alturaStr);
 
-            if (peso <= 0 || altura <= 0) {
+            if (nome.isBlack()||peso <= 0 || altura <= 0) {
                 resultado1.setText("ERRO");
                 resultado2.setText("ENTRADA INVALIDA");
                 return;
