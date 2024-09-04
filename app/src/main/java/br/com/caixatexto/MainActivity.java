@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView resultado1;
     private TextView resultado2;
+    private TextView campoNome;
+    private TextView campoPeso;
+    private TextView campoAltura;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
 
         resultado1 = findViewById(R.id.textResult1);
         resultado2 = findViewById(R.id.textResult2);
+        campoNome = findViewById(R.id.textoNome);
+        campoPeso = findViewById(R.id.textoPeso);
+        campoAltura = findViewById(R.id.textoAltura);
+
+
     }
 
     public void enviar(View view) {
-        TextInputEditText campoNome = findViewById(R.id.textoNome);
-        TextInputEditText campoPeso = findViewById(R.id.textoPeso);
-        TextInputEditText campoAltura = findViewById(R.id.textoAltura);
 
         String nome = campoNome.getText().toString();
         String pesoStr = campoPeso.getText().toString();
@@ -47,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             Double peso = Double.parseDouble(pesoStr);
             Double altura = Double.parseDouble(alturaStr);
 
-            if (nome.isBlack()||peso <= 0 || altura <= 0) {
+            if (nome.isBlank()||peso <= 0 || altura <= 0) {
                 resultado1.setText("ERRO");
                 resultado2.setText("ENTRADA INVALIDA");
                 return;
